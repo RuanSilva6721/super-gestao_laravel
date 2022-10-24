@@ -22,6 +22,7 @@ class AjusteProductsFiliais extends Migration
 
 
         Schema::create('products_filiais', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('filial_id');
             $table->unsignedBigInteger('product_id');
             $table->float('price', 8, 2);
