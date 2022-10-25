@@ -6,6 +6,8 @@ use Illuminate\Database\Seeder;
 
 use \App\Models\SiteContato;
 
+// use Faker\Generator as Faker;
+
 class SiteContatoSeeder extends Seeder
 {
     /**
@@ -15,6 +17,7 @@ class SiteContatoSeeder extends Seeder
      */
     public function run()
     {
+        // $faker  = new Faker();
         $SiteContato = new SiteContato();
 
         $SiteContato->name  = 'RuanSeeder';
@@ -26,6 +29,14 @@ class SiteContatoSeeder extends Seeder
 
 
         SiteContato::create(['name'=> 'RuanCreate', 'phone'=> '11111111', 'reason_for_contact' => 2, 'message'=> 'TMNC2' ]);
+
+        // SiteContato::factory(20)->create([
+        //     'name'=> $this->faker->name,
+        //     'phone'=> $this->faker->phoneNumber,
+        //     'reason_for_contact' => 1,
+        //     'message' =>$this->faker->building
+
+        // ]);
 
     }
 
