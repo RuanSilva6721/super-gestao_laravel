@@ -3,9 +3,9 @@
 {{ $param_com_array_asso }}
     <div class="informacao-pagina">
         <div class="contato-principal">
-            <form action="/contato" method="GET">
+            <form action="/contato" method="POST">
                 @csrf
-                <input type="text" placeholder="Nome" class="borda-preta" name="name">
+                <input type="text" placeholder="Nome" class="borda-preta" name="name" required value="{{old('name')}}">
                 <br>
                 <input type="text" placeholder="Telefone" class="borda-preta" name="phone">
                 <br>
@@ -18,9 +18,14 @@
                     <option value="3">Reclamação</option>
                 </select>
                 <br>
-                <textarea class="borda-preta" name="message">Preencha aqui a sua mensagem</textarea>
+                <textarea class="borda-preta" name="message" placeholder="Preencha aqui a sua mensagem"></textarea>
                 <br>
                 <button type="submit" class="borda-preta">ENVIAR</button>
             </form>
         </div>
     </div>
+<div  style="position: relative; top:0px; left:0px; width:100%; background-color:red;">
+    <pre>
+        {{print_r($errors)}}
+    </pre>
+</div>
