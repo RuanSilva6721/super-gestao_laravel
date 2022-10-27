@@ -8,6 +8,7 @@ use App\Http\Controllers\SobreNosController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\TesteController;
 
+use \App\Http\Middleware\LogAcessoMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,14 +22,14 @@ use App\Http\Controllers\TesteController;
 */
 
 
-Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
+Route::get('/', [PrincipalController::class, 'principal'])->name('site.index')->middleware('LogAcesso');
 Route::get('/sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
 Route::get('/contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::post('/contato', [ContatoController::class, 'salvar'])->name('site.contato');
 Route::get('/login', function(){return 'Login';})->name('site.login');
 
 Route::prefix('/app')->group(function() {
-    Route::get('/clientes', function(){return 'Clientes';})->name('app.clientes');
+    Route::get('/clientes', function(){return 'Clientes';})->name('app.clientes')->middleware('LogAcesso','autenticacao:padrao');
     Route::get('/fornecedores', [FornecedorController::class, 'index'])->name('app.fornecedores');
     Route::get('/produtos', function(){return 'produtos';})->name('app.produtos');
 });
