@@ -3,7 +3,7 @@
 @section('title', 'home')
 
 @section('conteudo')
-    @include('site.layouts._partials.topo')
+   
 
         <div class="conteudo-destaque">
 

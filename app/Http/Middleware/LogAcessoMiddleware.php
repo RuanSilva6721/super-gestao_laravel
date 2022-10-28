@@ -25,6 +25,8 @@ class LogAcessoMiddleware
         // dd($rota);
         // dd($request);
         LogAcesso::create(['log' => "IP $ip requisitou a rota ' $rota '"]);
+
+        
         return $next($request);
         // return Response('Chegamos no Middleware');
     }

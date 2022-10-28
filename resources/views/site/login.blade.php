@@ -1,18 +1,37 @@
 @extends('site.layouts.base')
 
-@section('title', 'contato')
+@section('title', $title)
 
 @section('conteudo')
 
-
 <div class="conteudo-pagina">
     <div class="titulo-pagina">
-        <h1>Entre em contato conosco</h1>
+        <h1>Login</h1>
     </div>
-    @component('site.layouts._components.form_contato', ['param_com_array_asso' => 10])
-    <h3>teste componentes</h3>
-    @endcomponent
+
+    <div class="informacao-pagina">
+        <div style="width: 30%; margin-left: auto; margin-right: auto;">
+        <form action="/login" method="POST">
+            @csrf
+            <input type="text" name="user" class="borda-preta" placeholder="Usuário">
+            @if($errors->has('user'))
+            {{$errors->first('user')}}
+            @endif
+            <input type="password" name="password" class="borda-preta" placeholder="Senha">
+            @if($errors->has('password'))
+            {{$errors->first('password')}}
+            @endif
+            <button type="submit" class="borda-preta">Acessar</button>
+
+        </form>
+
+        {{ isset($erro) && $erro != '' ? $erro : ''}}
+        </div>
+    </div>
+
+
 </div>
+
         <div class="rodape">
             <div class="redes-sociais">
                 <h2>Redes sociais</h2>
