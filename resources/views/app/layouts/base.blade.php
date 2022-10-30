@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-    {{-- @include('app.layouts._partials.topo') --}}
+     @include('app.layouts._partials.topo') 
 
     @yield('conteudo')
 
