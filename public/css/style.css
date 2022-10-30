@@ -199,6 +199,7 @@ button:hover {
     display: inline;
     margin-left: 5px;
     margin-right: 5px;
+    height: 10px;
 }
 
 .pagination ul {
