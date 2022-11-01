@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Produto extends Model
+class Unidade extends Model
 {
     use HasFactory;
 
-    protected $table = "products";
-    protected $fillable = ["name", "description", "weight", "unity_id"];
+    protected $table = 'units';
+    protected $fillable = ["unity", "descrption"];
 }
