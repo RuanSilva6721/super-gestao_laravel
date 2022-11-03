@@ -26,7 +26,7 @@ class AddDefaultUnityIdToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-           // $table->foreign('unity_id')->references('id')->on('units');->default(0.01)
+            $table->foreign('unity_id')->references('id')->on('units')->default(1);
         });
     }
 }

@@ -40,15 +40,15 @@
                     <tbody>
                         @foreach($produtos as $produto)
                             <tr>
-                                <td>{{ $produto->nome }}</td>
-                                <td>{{ $produto->descricao }}</td>
-                                <td>{{ $produto->fornecedor->nome }}</td>
-                                <td>{{ $produto->fornecedor->site }}</td>
-                                <td>{{ $produto->peso }}</td>
-                                <td>{{ $produto->unidade_id }}</td>
-                                <td>{{ $produto->itemDetalhe->comprimento ?? '' }}</td>
+                                <td>{{ $produto->name }}</td>
+                                <td>{{ $produto->description }}</td>
+                                {{-- <td>{{ $produto->fornecedor->nome }}</td>
+                                <td>{{ $produto->fornecedor->site }}</td> --}}
+                                <td>{{ $produto->weight }}</td>
+                                <td>{{ $produto->unity_id }}</td>
+                                {{-- <td>{{ $produto->itemDetalhe->comprimento ?? '' }}</td>
                                 <td>{{ $produto->itemDetalhe->altura ?? '' }}</td>
-                                <td>{{ $produto->itemDetalhe->largura ?? '' }}</td>
+                                <td>{{ $produto->itemDetalhe->largura ?? '' }}</td> --}}
                                 <td><a href="{{ route('produto.show', ['produto' => $produto->id ]) }}">Visualizar</a></td>
                                 <td>
                                     <form id="form_{{$produto->id}}" method="post" action="{{ route('produto.destroy', ['produto' => $produto->id]) }}">
@@ -63,12 +63,12 @@
 
                             <tr>
                                 <td colspan="12">
-                                    <p>Pedidos</p>
+                                    {{-- <p>Pedidos</p>
                                     @foreach($produto->pedidos as $pedido)
                                         <a href="{{ route('pedido-produto.create', ['pedido' => $pedido->id]) }}">
                                             Pedido: {{ $pedido->id }},
                                         </a>
-                                    @endforeach
+                                    @endforeach --}}
                                 </td>
                             </tr>
                         @endforeach

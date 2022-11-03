@@ -1,9 +1,9 @@
-@extends('app.layouts.basico')
+@extends('app.layouts.base')
 
 @section('titulo', 'Produto')
 
 @section('conteudo')
-    
+
     <div class="conteudo-pagina">
 
         <div class="titulo-pagina-2">
@@ -26,19 +26,19 @@
                     </tr>
                     <tr>
                         <td>Nome:</td>
-                        <td>{{ $produto->nome }}</td>
+                        <td>{{ $produto->name }}</td>
                     </tr>
                     <tr>
                         <td>Descrição:</td>
-                        <td>{{ $produto->descricao }}</td>
+                        <td>{{ $produto->description }}</td>
                     </tr>
                     <tr>
                         <td>Peso:</td>
-                        <td>{{ $produto->peso }} kg</td>
+                        <td>{{ $produto->weight }} kg</td>
                     </tr>
                     <tr>
                         <td>Unidade de Medida:</td>
-                        <td>{{ $produto->unidade_id }}</td>
+                        <td>{{ $produto->unity_id }}</td>
                     </tr>
                 </table>
             </div>
